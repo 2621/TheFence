@@ -1,5 +1,5 @@
 from django.shortcuts import render
 def index(request):
-    return render(request, 'blog/templates/index.html', {})
+    return render(request, 'index/index.html', {})
 
 # Create your views here.
