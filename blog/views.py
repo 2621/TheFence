@@ -5,4 +5,8 @@ def index(request):
 def sobre(request):
     return render(request, 'sobre/sobre.html', {})
 
+def contato(request):
+    return render(request, 'contato/contato.html', {})
+#render= exibir, gerar tela
+
 # Create your views here.
