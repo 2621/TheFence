@@ -7,9 +7,6 @@ def sobre(request):
 
 def contato(request):
     return render(request, 'contato/contato.html', {})
-
-def contato(request):
-    return render(request, 'singup/singup.html', {})
 #render= exibir, gerar tela
 
 # Create your views here.
