@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if user.is_authenticated %}
+	<h3 style="position:absolute; top:200px; left: 20px">{{user.profile.primeiro_nome}}, insira o número do telefone a ser cadastrado </h3>
+	<form style="position: absolute; top:260px; left: 20px" method="post">
+    {% csrf_token %}
+    <!--<input type="text" name="next" value="{{ next }}" />-->
+    {% for field in form %}
+      <p>
+        {{ field.label_tag }}<br>
+        {{ field }}<br>
+        {% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+        {% if field.help_text %}
+          <p><small style="color: grey">{{ field.help_text }}</small></p>
+        {% endif %}
+      </p>
+    {% endfor %}
+    <button style="top:250px; left: 20px" type="submit">Cadastrar</button>
+  </form>
+{% else %}
+	<a style="position: absolute; top:200px" href="{% url 'signup' %}">Novo no site? Inscreva-se aqui!</a>
+{% endif %}
+{% endblock %}

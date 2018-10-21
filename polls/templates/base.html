@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head style="background-color:#e4f1fe">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  </head>
+  <body style="background-color:#e4f1fe">
+    <header style="height: 120px">
+      <img src="https://image.flaticon.com/icons/svg/149/149442.svg" style="max-height: 100px; max-width: 100px; position: absolute; top: 20px; left: 20px;">
+      <h1 style="margin-top: 20px; margin-left: 150px">The Fence</h1>
+      <h3 style="margin-left: 150px">A segurança em suas mãos.</h3>
+      {% if user.is_authenticated %}
+        <nav style="width: fit-content; position:absolute; top: 30px; right: 30px;"><li{list-style-type: none}><a href="{% url 'logout' %}" class="btn btn-primary">Logout</a></li></nav> <nav style="width: fit-content; position:absolute; top: 30px; right: 100px;"><li{list-style-type: none}><a href="\minhaconta" class="btn btn-primary">Minha Conta</a></li></nav>
+      {% else %}
+        <nav style="width: fit-content; position:absolute; top: 30px; right: 30px;"><li{list-style-type: none}><a href="\login" class="btn btn-primary">Login</a></li></nav> <nav style="width: fit-content; position:absolute; top: 30px; right: 100px;"><li{list-style-type: none}><a href="\signup" class="btn btn-primary">Signup</a></li></nav>
+      {% endif %}
+      <hr>
+    </header>
+    <main>
+      <nav style="width: 100%; position: absolute; top:160px; left: 20px; height: 20px"><li{list-style-type: none}><a href="\home" class="btn btn-primary">Início</a></li></nav>
+      <nav style="width: 100%; position: absolute; top:160px; left: 100px; height: 20px"><li{list-style-type: none}><a href="\sobre" class="btn btn-primary">Sobre</a></li></nav>
+      <nav style="width: 100%; position: absolute; top:160px; left: 180px; height: 20px"><li{list-style-type: none}><a href="\contato" class="btn btn-primary">Contato</a></li></nav>
+      {% block content %}
+      {% endblock %}
+    </main>
+  </body>
+</html>

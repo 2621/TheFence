@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if user.is_authenticated %}
+	<h2 style="position: absolute; top:200px; left: 20px">Bem vindo, {{user.profile.primeiro_nome}} </h2>
+	<h3 style="position:absolute; top:260px; left: 50%">Seus aparelhos cadastrados: </h3>     <b><a style="position: absolute; top:282px; left: 75%" href="{% url 'cadastroaparelhos' %}">[+]</a></b>
+	{%if user.profile.aparelho1 != NULL %}
+		<h4 style="position: absolute; top:280px; left: 20px">{{user.profile.aparelho1}} </h2>
+	{%endif %}
+{% else %}
+	<a style="position: absolute; top:200px" href="{% url 'signup' %}">Novo no site? Inscreva-se aqui!</a>
+{% endif %}
+{% endblock %}
