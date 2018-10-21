@@ -18,26 +18,6 @@ def contato(request):
 def minhaconta(request):
 	return render(request, 'minhaconta.html')
 
-def cadastroaparelhos(request):
-	if request.method == 'POST':
-		form = NovoAparelho(request.POST)
-		if form.is_valid():
-			user = form.save()
-			user.refresh_from_db()
-			#if user.profile.aparelho1 is None:
-			user.profile.aparelho1 = form.cleaned_data.get('aparelho1')
-			user.save()
-			#elif user.profile.aparelho2 is None:
-			#	user.profile.aparelho2 = form.cleaned_data.get('aparelho2')
-			#	user.save()
-			#elif user.profile.aparelho3 is None:
-			#	user.profile.aparelho3 = form.cleaned_data.get('aparelho3')
-			#	user.save()
-		return redirect('minhaconta')
-	else:
-		form = NovoAparelho()	
-	return render(request, 'cadastroaparelhos.html', {'form':form})
-
 def signup(request):
 	if request.method == 'POST':
 		form = SignUpForm(request.POST)
@@ -63,4 +43,25 @@ def signup(request):
 	else:
 		form = SignUpForm()
 	return render (request, 'signup.html', {'form':form})
-# Create your views here.
+
+def cadastroaparelhos(request):
+	if request.method == 'POST':
+		form = NovoAparelho(request.POST)
+		if form.is_valid():
+			user = form.save()
+			user.refresh_from_db()
+			#if user.profile.aparelho1 is None:
+			user.profile.aparelho1 = form.cleaned_data.get('aparelho1')
+			user.save()
+			#elif user.profile.aparelho2 is None:
+			#	user.profile.aparelho2 = form.cleaned_data.get('aparelho2')
+			#	user.save()
+			#elif user.profile.aparelho3 is None:
+			#	user.profile.aparelho3 = form.cleaned_data.get('aparelho3')
+			#	user.save()
+		return redirect('minhaconta')
+	else:
+		form = NovoAparelho()	
+	return render(request, 'cadastroaparelhos.html', {'form':form})
+
+	# Create your views here.

@@ -15,7 +15,7 @@ class SignUpForm(UserCreationForm):
 		model = User
 		fields = ('username', 'primeiro_nome', 'ultimo_nome', 'email', 'telefone', 'password1', 'password2',)
 
-class NovoAparelho(forms.Form):
+class NovoAparelho(forms.ModelForm):
 	aparelho1 = forms.CharField(max_length=50)
 	#aparelho2 = forms.CharField(max_length=50)
 	#aparelho3 = forms.CharField(max_length=50)
