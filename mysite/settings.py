@@ -25,7 +25,7 @@ SECRET_KEY = '!!=r)gmbwo75hf#7_s)$%9olqk&ij%m!rx56rkqnth&!7eyt!o'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','.pythonanywhere.com','thefence.pythonanywhere.com', 'localhost','thefence.cwyb3yb5xedi.sa-east-1.rds.amazonaws.com']
+ALLOWED_HOSTS = ['127.0.0.1','.pythonanywhere.com','thefence.pythonanywhere.com', 'localhost']
 
 
 # Application definition
@@ -78,13 +78,14 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'rafaelverissimo',
-        'USER': 'rafaelverissimo',
-        'PASSWORD': 'thefence',
-        'HOST': 'thefence.cwyb3yb5xedi.sa-east-1.rds.amazonaws.com',
+        'NAME': 'TheFence',
+        'USER': 'postgres',
+        'PASSWORD': 'postgressenha',
+        'HOST': '127.0.0.1',
         'PORT': '5432',
     }
 }
+
 
 
 # Password validation
