@@ -25,7 +25,7 @@ SECRET_KEY = '!!=r)gmbwo75hf#7_s)$%9olqk&ij%m!rx56rkqnth&!7eyt!o'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','.pythonanywhere.com','thefence.pythonanywhere.com', 'localhost']
+ALLOWED_HOSTS = ['127.0.0.1','.pythonanywhere.com','thefence.pythonanywhere.com', 'localhost','thefence.cwyb3yb5xedi.sa-east-1.rds.amazonaws.com']
 
 
 # Application definition
@@ -81,7 +81,7 @@ DATABASES = {
         'NAME': 'TheFence',
         'USER': 'postgres',
         'PASSWORD': 'postgressenha',
-        'HOST': '127.0.0.1',
+        'HOST': '127.0.0.1','thefence.cwyb3yb5xedi.sa-east-1.rds.amazonaws.com',
         'PORT': '5432',
     }
 }
