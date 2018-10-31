@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from polls.models import Aparelho
 
 
 class SignUpForm(UserCreationForm):
@@ -16,11 +17,9 @@ class SignUpForm(UserCreationForm):
 		fields = ('username', 'primeiro_nome', 'ultimo_nome', 'email', 'telefone', 'password1', 'password2',)
 
 class NovoAparelho(forms.ModelForm):
-	aparelho1 = forms.CharField(max_length=50)
-	#aparelho2 = forms.CharField(max_length=50)
-	#aparelho3 = forms.CharField(max_length=50)
+	nome_aparelho = forms.CharField(max_length=50)
 
 	class Meta:
-		model = User
-		fields = ('aparelho1',)
-		#'aparelho2', 'aparelho3',
+		model = Aparelho
+		fields = ('nome_aparelho',)
+		

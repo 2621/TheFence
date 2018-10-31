@@ -11,11 +11,9 @@ class Profile(models.Model):
 	email = models.EmailField(max_length=30, blank=True)
 	#password = models.CharField(max_length=30, blank = False)
 	telefone = models.CharField(max_length=50, blank=True)
-	aparelho1 = models.CharField(max_length=50, blank=True)
-	#aparelho2 = models.CharField(max_length=50, blank=True)
-	#aparelho3 = models.CharField(max_length=50, blank=True)
-	#colocar campos de position e time (DateField)
-	#ver se é aqui que coloca a função para ir atualizando position e time
+
+class Aparelho(models.Model):
+	nome_aparelho = models.CharField(max_length=50, blank=True)
 
 @receiver(post_save, sender=User)
 def update_user_profile(sender, instance, created, **kwargs):
