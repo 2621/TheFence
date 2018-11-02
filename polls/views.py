@@ -49,6 +49,7 @@ def cadastroaparelhos(request):
 	if request.method == 'POST':
 		form = NovoAparelho(request.POST)
 		if form.is_valid():
+			#fazer algo tipo print("oi") para ver se está chamando certo
 			Aparelho = form.save()
 			Aparelho.nome_aparelho = form.cleaned_data.get('nome_aparelho')
 			Aparelho.save()

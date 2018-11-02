@@ -1,0 +1,3 @@
+option_settings:
+awss:elasticbeanstalk:container:python:
+WSGIPath:  ebdjango/wsgi.py
