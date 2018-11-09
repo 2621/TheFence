@@ -3,10 +3,13 @@
 {% block content %}
 {% if user.is_authenticated %}
 	<h2 style="position: absolute; top:200px; left: 20px">Bem vindo, {{user.profile.primeiro_nome}} </h2>
-	<h3 style=" width: fit-content; position:absolute; top:260px; left: 50%">Seus aparelhos cadastrados: </h3>     <b><a style="position: absolute; top:282px; left: 75%" href="{% url 'cadastroaparelhos' %}">[+]</a></b>
-	{%if user.profile.aparelho1 != NULL %}
-		<h4 style="position: absolute; top:280px; left: 20px">{{user.profile.aparelho1}} </h2>
-	{%endif %}
+	<h3 style=" width: fit-content; position:absolute; top:260px; left: 18%">Seus aparelhos cadastrados: </h3>     <b><a style="position: absolute; top:282px; left: 50%" href="{% url 'cadastroaparelhos' %}">[+]</a></b>
+	<h4 style="position: absolute; top:340px; left: 10%">{{user.profile.nome_aparelho}} </h4>
+		<!-- %if colocar ultimas coordenadas dentro do limite%
+		<h4 style="position: absolute; top:340px; left: 40%; color:#00802b">Aparelho dentro da cerca! </h4>
+		%else%
+		<h4 style="position: absolute; top:340px; left: 40%; color:#ff0000">Aparelho fora da cerca! </h4>
+		% endif % -->
 {% else %}
 	<a style="position: absolute; top:200px" href="{% url 'signup' %}">Novo no site? Inscreva-se aqui!</a>
 {% endif %}

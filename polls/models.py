@@ -9,13 +9,13 @@ class Profile(models.Model):
 	ultimo_nome = models.CharField(max_length=50, blank=True)
 	email = models.EmailField(max_length=30, blank=True)
 	telefone = models.CharField(max_length=50, blank=True)
-#	aparelho = models.CharField(max_length=30, blank=True)
-#	ultima_lat = models.CharField(max_length=30, blank=True)
-#	ultima_long = models.CharField(max_length=30, blank=True)
+	nome_aparelho = models.CharField(max_length=30, blank=True)
+	ultima_lat = models.CharField(max_length=30, blank=True, null=True)
+	ultima_long = models.CharField(max_length=30, blank=True, null=True)
 
-class Aparelho(models.Model):
-	nome_aparelho = models.CharField(max_length=50, blank=True)
-	profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
+#class Aparelho(models.Model):
+#	nome_aparelho = models.CharField(max_length=50, blank=True)
+#	profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
 
 @receiver(post_save, sender=User)
 def update_user_profile(sender, instance, created, **kwargs):

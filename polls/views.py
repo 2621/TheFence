@@ -37,6 +37,8 @@ def signup(request):
 			#user.save()
 			user.profile.telefone = form.cleaned_data.get('telefone')
 			user.save()
+			user.profile.nome_aparelho = form.cleaned_data.get('nome_aparelho')
+			user.save()
 			raw_password = form.cleaned_data.get('password1')
 			user = authenticate(username=user.username,password=raw_password)
 			login(request,user)
@@ -46,17 +48,17 @@ def signup(request):
 	return render (request, 'signup.html', {'form':form})
 
 def cadastroaparelhos(request):
-	if request.method == 'POST':
-		form = NovoAparelho(request.POST)
-		if form.is_valid():
-			#fazer algo tipo print("oi") para ver se está chamando certo
-			user.profile.aparelho = form.save()
-			user.profile.aparelho = form.cleaned_data.get('aparelho')
-			user.profile.aparelho.save()
-	
-		return redirect('minhaconta')
-	else:
-		form = NovoAparelho()	
-	return render(request, 'cadastroaparelhos.html', {'form':form})
+#	if request.method == 'POST':
+#		form = NovoAparelho(request.POST)
+#		if form.is_valid():
+#			#fazer algo tipo print("oi") para ver se está chamando certo
+#			user.profile.aparelho = form.save()
+#			user.profile.aparelho = form.cleaned_data.get('aparelho')
+#			user.profile.aparelho.save()
+#	
+#		return redirect('minhaconta')
+#	else:
+#		form = NovoAparelho()	
+	return render(request, 'cadastroaparelhos.html')#, {'form':form})
 
 	# Create your views here.
