@@ -4,7 +4,7 @@ from django.contrib.auth import login, authenticate
 
 from polls.forms import SignUpForm
 from polls.forms import	NovoAparelho
-from polls.models import Aparelho
+#from polls.models import Aparelho
 
 @login_required
 def home(request):
@@ -50,9 +50,9 @@ def cadastroaparelhos(request):
 		form = NovoAparelho(request.POST)
 		if form.is_valid():
 			#fazer algo tipo print("oi") para ver se está chamando certo
-			Aparelho = form.save()
-			Aparelho.nome_aparelho = form.cleaned_data.get('nome_aparelho')
-			Aparelho.save()
+			user.profile.aparelho = form.save()
+			user.profile.aparelho = form.cleaned_data.get('aparelho')
+			user.profile.aparelho.save()
 	
 		return redirect('minhaconta')
 	else:

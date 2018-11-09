@@ -7,13 +7,15 @@ class Profile(models.Model):
 	user = models.OneToOneField(User, on_delete=models.CASCADE)
 	primeiro_nome = models.CharField(max_length=50, blank=True)
 	ultimo_nome = models.CharField(max_length=50, blank=True)
-	#ID = models.PositiveIntegerField()
 	email = models.EmailField(max_length=30, blank=True)
-	#password = models.CharField(max_length=30, blank = False)
 	telefone = models.CharField(max_length=50, blank=True)
+#	aparelho = models.CharField(max_length=30, blank=True)
+#	ultima_lat = models.CharField(max_length=30, blank=True)
+#	ultima_long = models.CharField(max_length=30, blank=True)
 
 class Aparelho(models.Model):
 	nome_aparelho = models.CharField(max_length=50, blank=True)
+	profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
 
 @receiver(post_save, sender=User)
 def update_user_profile(sender, instance, created, **kwargs):
