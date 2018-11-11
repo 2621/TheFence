@@ -3,6 +3,7 @@
 {% block content %}
 {% if user.is_authenticated %}
 	<h3 style="position:absolute; top:200px; left: 20px">{{user.profile.primeiro_nome}}, insira o número do telefone a ser cadastrado </h3>
+  <h2 style="position:absolute; top:250px; left: 20px; color: #ff0000">Serviço Indisponível</h2>
 <!--	<form style="position: absolute; top:260px; left: 20px" method="post">
     {% csrf_token %}
     {% for field in form %}

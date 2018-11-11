@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blog',
+    'django.contrib.gis'
 ]
 
 MIDDLEWARE = [
@@ -77,15 +77,14 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'TheFence2',
-        'USER': 'postgres',
-        'PASSWORD': 'postgressenha',
-        'HOST': '127.0.0.1',
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'NAME': 'thefence',
+        'USER': 'rafaelverissimo',
+        'PASSWORD': 'thefence',
+        'HOST': 'thefence.cwyb3yb5xedi.sa-east-1.rds.amazonaws.com',
         'PORT': '5432',
     }
 }
-
 
 
 # Password validation
@@ -130,3 +129,4 @@ STATIC_ROOT =os.path.join(BASE_DIR,'static') #para o primeiro site criado
 LOGIN_REDIRECT_URL = 'home'
 LOGIN_URL = 'login'
 LOGIN_OUT = 'logout'
+GDAL_LIBRARY_PATH = '/home/sue/local/lib/libgdal.so'
