@@ -5,6 +5,16 @@
 	<h2 style="position: absolute; top:200px; left: 20px">Bem vindo, {{user.profile.primeiro_nome}} </h2>
 	<h3 style=" width: fit-content; position:absolute; top:260px; left: 18%">Seus aparelhos cadastrados: </h3>     <b><a style="position: absolute; top:282px; left: 50%" href="{% url 'cadastroaparelhos' %}">[+]</a></b>
 	<h4 style="position: absolute; top:340px; left: 10%">{{user.profile.nome_aparelho}} </h4>
+	<select name="Bairros" style="position: absolute; top:350px; left:20%">
+  		<option value="">Selecione os Bairros</option>
+  		<option value="Saúde">Saúde</option>
+  		<option value="Gamboa">Gamboa</option>
+  		<option value="Santo Cristo">Santo Cristo</option>
+  		<option value="Urca">Urca</option>
+  		<option value="Botafogo">Botafogo</option>
+  		<option value="Flamengo">Flamengo</option>
+	</select>
+	<h4 style="position: absolute; top:340px; left: 40%; color:#00802b">Aparelho dentro da cerca! </h4>
 		<!-- %if colocar ultimas coordenadas dentro do limite%
 		<h4 style="position: absolute; top:340px; left: 40%; color:#00802b">Aparelho dentro da cerca! </h4>
 		%else%

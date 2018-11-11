@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.gis'
+    #'django.contrib.gis'
 ]
 
 MIDDLEWARE = [
@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'thefence',
         'USER': 'rafaelverissimo',
         'PASSWORD': 'thefence',
@@ -129,4 +129,4 @@ STATIC_ROOT =os.path.join(BASE_DIR,'static') #para o primeiro site criado
 LOGIN_REDIRECT_URL = 'home'
 LOGIN_URL = 'login'
 LOGIN_OUT = 'logout'
-GDAL_LIBRARY_PATH = '/home/sue/local/lib/libgdal.so'
+#GDAL_LIBRARY_PATH = '/home/sue/local/lib/libgdal.so'
