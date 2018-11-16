@@ -79,9 +79,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'thefence',
-        'USER': 'rafaelverissimo',
-        'PASSWORD': 'thefence',
-        'HOST': 'thefence.cwyb3yb5xedi.sa-east-1.rds.amazonaws.com',
+        'USER': 'postgres',
+        'PASSWORD': 'postgressenha',
+        'HOST': '127.0.0.1',
         'PORT': '5432',
     }
 }

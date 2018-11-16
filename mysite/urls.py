@@ -35,5 +35,6 @@ urlpatterns = [
     path('contato/', polls_views.contato, name='contato'),
     path('signup/', polls_views.signup, name='signup'),
     path('minhaconta/', polls_views.minhaconta, name='minhaconta'),
+    path('minhaconta2/', polls_views.minhaconta2, name='minhaconta2'),
     path('cadastroaparelhos/', polls_views.cadastroaparelhos, name='cadastroaparelhos')
 ]

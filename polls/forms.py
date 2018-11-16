@@ -2,6 +2,8 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 #from polls.models import Aparelho
+from django.forms import ModelChoiceField
+from polls.models import Limite_Bairro, Profile
 
 
 class SignUpForm(UserCreationForm):
@@ -16,6 +18,13 @@ class SignUpForm(UserCreationForm):
 	class Meta:
 		model = User
 		fields = ('username', 'primeiro_nome', 'ultimo_nome', 'email', 'telefone', 'nome_aparelho', 'password1', 'password2',)
+
+class Bairro(forms.ModelForm):
+	
+	class Meta:
+		model=Profile
+		fields = ('limite_bairro',)
+
 
 class NovoAparelho(forms.ModelForm):
 	aparelho = forms.CharField(max_length=50)

@@ -1,9 +1,12 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, authenticate
-
+from polls.models import Limite_Bairro, Profile
 from polls.forms import SignUpForm
 from polls.forms import	NovoAparelho
+from polls.forms import	Bairro
+from django.views import generic
+
 #from polls.models import Aparelho
 
 @login_required
@@ -15,9 +18,6 @@ def sobre(request):
 
 def contato(request):
 	return render(request, 'contato.html')
-
-def minhaconta(request):
-	return render(request, 'minhaconta.html')
 
 def signup(request):
 	if request.method == 'POST':
@@ -46,6 +46,15 @@ def signup(request):
 	else:
 		form = SignUpForm()
 	return render (request, 'signup.html', {'form':form})
+
+def minhaconta(request):
+	form = Bairro()
+	return render(request, 'minhaconta.html', context={'user':request.user, 'form':form})
+	#return redirect('minhaconta2')
+
+
+def minhaconta2(request):
+	return render(request, 'minhaconta2.html')
 
 def cadastroaparelhos(request):
 #	if request.method == 'POST':
